@@ -24,4 +24,12 @@ public class Thing {
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
+
+    @Override
+    public String toString() {
+        return "Thing{" +
+                "isFragile=" + isFragile +
+                ", thingName='" + thingName + '\'' +
+                '}';
+    }
 }
