@@ -4,11 +4,29 @@ import functionalinterface.example.FunctionalInterfacesDemonstrator;
 import movie.task.MovieProcessingDemonstrator;
 import users.task.UserProcessingDemonstrator;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        FunctionalInterfacesDemonstrator.demonstrateFuncInterfacesWork();
-        UserProcessingDemonstrator.demonstrateUserProcessing();
-        MovieProcessingDemonstrator.demonstrateMovieProcessing();
-        ThingsProcessingDemonstrator.demonstrateBoxTask();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of task:(1-4)");
+        switch (sc.nextInt()){
+            case 1:
+                FunctionalInterfacesDemonstrator.demonstrateFuncInterfacesWork();
+                break;
+            case 2:
+                UserProcessingDemonstrator.demonstrateUserProcessing();
+                break;
+            case 3:
+                MovieProcessingDemonstrator.demonstrateMovieProcessing();
+                break;
+            case 4:
+                ThingsProcessingDemonstrator.demonstrateBoxTask();
+                break;
+        }
+
+
+
+
     }
 }

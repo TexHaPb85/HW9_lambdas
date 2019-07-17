@@ -16,15 +16,15 @@ public class UserProcessingDemonstrator {
 
         List<User> users = generateUsers(99);
 
-        Map<Team, List<String>> groupedEmails =users.stream()
-                .filter(u->Duration.between(LocalDate.now().atStartOfDay(), u.getLoginDate().atStartOfDay()).toDays()>=-7)
+        Map<Team, List<String>> groupedEmails = users.stream()
+                .filter(u -> Duration.between(LocalDate.now().atStartOfDay(), u.getLoginDate().atStartOfDay()).toDays() >= -7)
                 .peek(System.out::println)
                 .collect(Collectors.groupingBy(User::getTeam,
-                        Collectors.mapping(User::getEmail,Collectors.toList())));
+                        Collectors.mapping(User::getEmail, Collectors.toList())));
 
-        System.out.println("Grifindor users:\n"+groupedEmails.get(Team.FIRST_TEAM));
-        System.out.println("Slizerin users:\n"+groupedEmails.get(Team.SECOND_TEAN));
-        System.out.println("Banglhof users:\n"+groupedEmails.get(Team.THIRD_TEAM));
+        System.out.println("Grifindor users:\n" + groupedEmails.get(Team.FIRST_TEAM));
+        System.out.println("Slizerin users:\n" + groupedEmails.get(Team.SECOND_TEAN));
+        System.out.println("Banglhof users:\n" + groupedEmails.get(Team.THIRD_TEAM));
     }
 
     private static List<User> generateUsers(int howMany) {
@@ -47,6 +47,7 @@ public class UserProcessingDemonstrator {
             }
             users.add(new User(uniqueEmail, date, team));
         }
+
         return users;
     }
 }

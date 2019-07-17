@@ -32,10 +32,10 @@ public class MovieProcessingDemonstrator {
                 .average()
                 .getAsDouble();
 
-        System.out.println("Horror average price: "+horrorAveragePrice + " films count:"+gouredMovies.get("Horror").size());
-        System.out.println("Comedy average price: "+comedyAveragePrice + " films count:"+gouredMovies.get("Comedy").size());
-        System.out.println("Action average price: "+actionAveragePrice + " films count:"+gouredMovies.get("Action").size());
-        System.out.println("Drama average price: "+dramaAveragePrice + " films count:"+gouredMovies.get("Drama").size());
+        System.out.println("Horror average price: " + horrorAveragePrice + " films count:" + gouredMovies.get("Horror").size());
+        System.out.println("Comedy average price: " + comedyAveragePrice + " films count:" + gouredMovies.get("Comedy").size());
+        System.out.println("Action average price: " + actionAveragePrice + " films count:" + gouredMovies.get("Action").size());
+        System.out.println("Drama average price: " + dramaAveragePrice + " films count:" + gouredMovies.get("Drama").size());
     }
 
     private static List<Movie> generateMovies(int howMany) {
@@ -48,23 +48,24 @@ public class MovieProcessingDemonstrator {
             switch (rand.getRandomInteger(0, 4)) {
                 case 0:
                     genre = "Horror";
-                    price=rand.getRandomInteger(40,120);
+                    price = rand.getRandomInteger(40, 120);
                     break;
                 case 1:
                     genre = "Comedy";
-                    price=rand.getRandomInteger(50,110);
+                    price = rand.getRandomInteger(50, 110);
                     break;
                 case 2:
                     genre = "Action";
-                    price=rand.getRandomInteger(50,200);
+                    price = rand.getRandomInteger(50, 200);
                     break;
                 case 3:
                     genre = "Drama";
-                    price=rand.getRandomInteger(20,100);
+                    price = rand.getRandomInteger(20, 100);
                     break;
             }
-            movies.add(new Movie(uniqueName,genre,price));
+            movies.add(new Movie(uniqueName, genre, price));
         }
+
         return movies;
     }
 }

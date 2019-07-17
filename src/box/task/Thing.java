@@ -27,7 +27,7 @@ public class Thing {
 
     @Override
     public String toString() {
-        return "Thing{" +
+        return "\nThing{" +
                 "isFragile=" + isFragile +
                 ", thingName='" + thingName + '\'' +
                 '}';
