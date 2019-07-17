@@ -1,4 +1,4 @@
-package box_task;
+package box.task;
 
 public class Protector {
     private Thing thing;

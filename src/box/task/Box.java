@@ -1,4 +1,4 @@
-package box_task;
+package box.task;
 
 import java.util.List;
 

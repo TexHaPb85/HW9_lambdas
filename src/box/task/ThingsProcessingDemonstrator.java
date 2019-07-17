@@ -1,6 +1,6 @@
-package box_task;
+package box.task;
 
-import functional_interface_example.Randomable;
+import functionalinterface.example.Randomable;
 
 import java.util.ArrayList;
 import java.util.List;

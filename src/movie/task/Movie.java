@@ -1,4 +1,4 @@
-package movie_task;
+package movie.task;
 
 public class Movie {
     private String name;

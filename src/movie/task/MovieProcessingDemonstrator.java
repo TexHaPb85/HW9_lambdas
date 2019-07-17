@@ -1,7 +1,6 @@
-package movie_task;
+package movie.task;
 
-import functional_interface_example.Randomable;
-import users_task.Team;
+import functionalinterface.example.Randomable;
 
 import java.util.ArrayList;
 import java.util.List;

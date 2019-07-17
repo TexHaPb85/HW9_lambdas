@@ -1,4 +1,4 @@
-package functional_interface_example;
+package functionalinterface.example;
 
 @FunctionalInterface
 public interface Summable {

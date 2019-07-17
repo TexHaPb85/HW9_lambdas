@@ -1,4 +1,4 @@
-package users_task;
+package users.task;
 
 import java.time.LocalDate;
 

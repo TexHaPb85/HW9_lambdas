@@ -1,4 +1,4 @@
-package users_task;
+package users.task;
 
 public enum Team {
     FIRST_TEAM("Grifindor"),

@@ -1,6 +1,6 @@
-package users_task;
+package users.task;
 
-import functional_interface_example.Randomable;
+import functionalinterface.example.Randomable;
 
 import java.time.Duration;
 import java.time.LocalDate;

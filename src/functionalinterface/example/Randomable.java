@@ -1,4 +1,4 @@
-package functional_interface_example;
+package functionalinterface.example;
 @FunctionalInterface
 public interface Randomable {
     int getRandomInteger(int fromNum, int toNum);

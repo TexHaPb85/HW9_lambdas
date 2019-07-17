@@ -1,7 +1,8 @@
-import box_task.ThingsProcessingDemonstrator;
-import functional_interface_example.FunctionalInterfacesDemonstrator;
-import movie_task.MovieProcessingDemonstrator;
-import users_task.UserProcessingDemonstrator;
+import box.task.ThingsProcessingDemonstrator;
+
+import functionalinterface.example.FunctionalInterfacesDemonstrator;
+import movie.task.MovieProcessingDemonstrator;
+import users.task.UserProcessingDemonstrator;
 
 public class Main {
     public static void main(String[] args) {
