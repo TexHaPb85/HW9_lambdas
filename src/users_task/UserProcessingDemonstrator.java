@@ -10,10 +10,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public class Demonstrator {
-    public static void main(String[] args) {
+public class UserProcessingDemonstrator {
 
-        List<User> users = generateUsers();
+    public static void demonstrateUserProcessing() {
+
+        List<User> users = generateUsers(99);
 
         Map<Team, List<String>> groupedEmails =users.stream()
                 .filter(u->Duration.between(LocalDate.now().atStartOfDay(), u.getLoginDate().atStartOfDay()).toDays()>=-7)
@@ -26,10 +27,10 @@ public class Demonstrator {
         System.out.println("Banglhof users:\n"+groupedEmails.get(Team.THIRD_TEAM));
     }
 
-    private static List<User> generateUsers() {
+    private static List<User> generateUsers(int howMany) {
         Randomable rand = (from, to) -> from + (int) (Math.random() * (to - from));
         List<User> users = new ArrayList<>();
-        for (int i = 0; i < 999; i++) {
+        for (int i = 0; i < howMany; i++) {
             String uniqueEmail = "user" + i + "@gmail.com";
             LocalDate date = LocalDate.now().minusDays(rand.getRandomInteger(0, 14));
             Team team = null;

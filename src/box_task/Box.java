@@ -1,5 +1,7 @@
 package box_task;
 
-public class Box {
+import java.util.List;
 
+public class Box {
+    private List<Thing> things;
 }

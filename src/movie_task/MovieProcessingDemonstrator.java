@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Demonstrator {
-    public static void main(String[] args) {
+public class MovieProcessingDemonstrator {
+
+    public static void demonstrateMovieProcessing() {
         List<Movie> movies = generateMovies(99);
 
         Map<String, List<Movie>> gouredMovies = movies.stream()
