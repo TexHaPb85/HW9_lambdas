@@ -7,26 +7,23 @@ import users.task.UserProcessingDemonstrator;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number of task:(1-4)");
         switch (sc.nextInt()){
-            case 1:
+            case ConstantKeeper.firstTaskNumber:
                 FunctionalInterfacesDemonstrator.demonstrateFuncInterfacesWork();
                 break;
-            case 2:
+            case ConstantKeeper.secondTaskNumber:
                 UserProcessingDemonstrator.demonstrateUserProcessing();
                 break;
-            case 3:
+            case ConstantKeeper.thirdTaskNumber:
                 MovieProcessingDemonstrator.demonstrateMovieProcessing();
                 break;
-            case 4:
+            case ConstantKeeper.fourthTaskNumber:
                 ThingsProcessingDemonstrator.demonstrateBoxTask();
                 break;
         }
-
-
-
-
     }
 }

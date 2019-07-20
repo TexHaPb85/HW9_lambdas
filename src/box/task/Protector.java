@@ -18,7 +18,7 @@ public class Protector {
     @Override
     public String toString() {
         return "\nProtector{" +
-                "thing=" + thing.getThingName() +
+                "thing=" + thing.getName() +
                 '}';
     }
 }

@@ -2,11 +2,11 @@ package box.task;
 
 public class Thing {
     private boolean isFragile;
-    private String thingName;
+    private String name;
 
     public Thing(boolean isFragile, String thingName) {
         this.isFragile = isFragile;
-        this.thingName = thingName;
+        this.name = thingName;
     }
 
     public boolean isFragile() {
@@ -17,19 +17,19 @@ public class Thing {
         isFragile = fragile;
     }
 
-    public String getThingName() {
-        return thingName;
+    public String getName() {
+        return name;
     }
 
-    public void setThingName(String thingName) {
-        this.thingName = thingName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "\nThing{" +
                 "isFragile=" + isFragile +
-                ", thingName='" + thingName + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

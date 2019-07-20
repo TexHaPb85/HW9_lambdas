@@ -28,7 +28,7 @@ public class UserProcessingDemonstrator {
     }
 
     private static List<User> generateUsers(int howMany) {
-        Randomable rand = (from, to) -> from + (int) (Math.random() * (to - from));
+        Randomable rand = (from, to) -> (int) (Math.random() * (to - from))+from;
         List<User> users = new ArrayList<>();
         for (int i = 0; i < howMany; i++) {
             String uniqueEmail = "user" + i + "@gmail.com";

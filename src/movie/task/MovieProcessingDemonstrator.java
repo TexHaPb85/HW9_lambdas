@@ -39,7 +39,7 @@ public class MovieProcessingDemonstrator {
     }
 
     private static List<Movie> generateMovies(int howMany) {
-        Randomable rand = (from, to) -> from + (int) (Math.random() * (to - from));
+        Randomable rand = (from, to) -> (int) (Math.random() * (to - from))+from;
         List<Movie> movies = new ArrayList<>();
         for (int i = 0; i < howMany; i++) {
             String uniqueName = "Movie number" + i;
