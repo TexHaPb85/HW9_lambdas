@@ -1,7 +1,5 @@
 package movie.task;
 
-import functionalinterface.example.Randomable;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,61 +7,37 @@ import java.util.stream.Collectors;
 
 public class MovieProcessingDemonstrator {
 
-    public static void demonstrateMovieProcessing() {
-        List<Movie> movies = generateMovies(99);
-
-        Map<String, List<Movie>> gouredMovies = movies.stream()
-                .peek(System.out::println)
-                .collect(Collectors.groupingBy(Movie::getGenre));
-        double horrorAveragePrice = gouredMovies.get("Horror").stream()
+    private static double getAveragePriceOfCategory(Map<String, List<Movie>> groupedMovies, String category) {
+        return groupedMovies.get(category).stream()
                 .mapToInt(Movie::getPrice)
                 .average()
                 .getAsDouble();
-        double comedyAveragePrice = gouredMovies.get("Comedy").stream()
-                .mapToInt(Movie::getPrice)
-                .average()
-                .getAsDouble();
-        double actionAveragePrice = gouredMovies.get("Action").stream()
-                .mapToInt(Movie::getPrice)
-                .average()
-                .getAsDouble();
-        double dramaAveragePrice = gouredMovies.get("Drama").stream()
-                .mapToInt(Movie::getPrice)
-                .average()
-                .getAsDouble();
-
-        System.out.println("Horror average price: " + horrorAveragePrice + " films count:" + gouredMovies.get("Horror").size());
-        System.out.println("Comedy average price: " + comedyAveragePrice + " films count:" + gouredMovies.get("Comedy").size());
-        System.out.println("Action average price: " + actionAveragePrice + " films count:" + gouredMovies.get("Action").size());
-        System.out.println("Drama average price: " + dramaAveragePrice + " films count:" + gouredMovies.get("Drama").size());
     }
 
-    private static List<Movie> generateMovies(int howMany) {
-        Randomable rand = (from, to) -> (int) (Math.random() * (to - from))+from;
+    public static void demonstrateMovieProcessing() {
+        List<Movie> moviesFirstList = generateMovies(25);
+        List<Movie> moviesSecondList = generateMovies(25);
+        moviesFirstList.addAll(moviesSecondList);
+
+        Map<String, List<Movie>> groupedMovies = moviesFirstList.stream()
+                .peek(System.out::println)
+                .collect(Collectors.groupingBy(m -> m.getGenre().getNameOfCategorie()));
+
+        double horrorAveragePrice = getAveragePriceOfCategory(groupedMovies, "Horror");
+        double comedyAveragePrice = getAveragePriceOfCategory(groupedMovies, "Comedy");
+        double actionAveragePrice = getAveragePriceOfCategory(groupedMovies, "Action");
+        double dramaAveragePrice = getAveragePriceOfCategory(groupedMovies, "Drama");
+
+        System.out.println("Horror average price: " + horrorAveragePrice + " films count:" + groupedMovies.get("Horror").size());
+        System.out.println("Comedy average price: " + comedyAveragePrice + " films count:" + groupedMovies.get("Comedy").size());
+        System.out.println("Action average price: " + actionAveragePrice + " films count:" + groupedMovies.get("Action").size());
+        System.out.println("Drama average price: " + dramaAveragePrice + " films count:" + groupedMovies.get("Drama").size());
+    }
+
+    private static List<Movie> generateMovies(int amount) {
         List<Movie> movies = new ArrayList<>();
-        for (int i = 0; i < howMany; i++) {
-            String uniqueName = "Movie number" + i;
-            String genre = null;
-            int price = 0;
-            switch (rand.getRandomInteger(0, 4)) {
-                case 0:
-                    genre = "Horror";
-                    price = rand.getRandomInteger(40, 120);
-                    break;
-                case 1:
-                    genre = "Comedy";
-                    price = rand.getRandomInteger(50, 110);
-                    break;
-                case 2:
-                    genre = "Action";
-                    price = rand.getRandomInteger(50, 200);
-                    break;
-                case 3:
-                    genre = "Drama";
-                    price = rand.getRandomInteger(20, 100);
-                    break;
-            }
-            movies.add(new Movie(uniqueName, genre, price));
+        for (int i = 0; i < amount; i++) {
+            movies.add(new Movie());
         }
 
         return movies;
